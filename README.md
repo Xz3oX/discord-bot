@@ -1,6 +1,6 @@
 <img src = "https://i.imgur.com/qyPqPmE.png" width = "800">
 
-[![CodeFactor](https://www.codefactor.io/repository/github/ff4LL/discord-bot/badge)](https://www.codefactor.io/repository/github/ff4LL/discord-bot)
+![CodeFactor](https://www.codefactor.io/repository/github/ff4LL/discord-bot/badge)](https://www.codefactor.io/repository/github/ff4LL/discord-bot)
 ![LastCommit](https://img.shields.io/github/last-commit/ff4LL/discord-bot)
 ![Issues](https://img.shields.io/github/issues/ff4LL/discord-bot)
 ![PullRequests](https://img.shields.io/github/issues-pr/ff4LL/discord-bot)
