@@ -5,8 +5,8 @@ from discord.ext import commands
 from random import randint
 from datetime import datetime
 
-cmdChannel = '🤖┃comandos' # Put here name of channel of only commands
-cmdChannelM = '<#764261852988964864>' # Put here ID of channel of only commands
+cmdChannel = '' # Put here name of channel of only commands
+cmdChannelM = '<#ID>' # Put here ID of channel of only commands
 
 class Recreation(commands.Cog, name = 'Recreação'):
     
@@ -23,7 +23,6 @@ class Recreation(commands.Cog, name = 'Recreação'):
             # Console return
             print('\n', f'-'*30)
             print(f'\n[+] A hello command has been called!\n\nLog: Author: {ctx.author}')
-            await ctx.message.delete()
         else:
             e = discord.Embed(description = f'Eu não posso executar comandos aqui, {ctx.author.mention}! Use o canal {cmdChannelM}!', colour = 0xFE0000, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
@@ -58,7 +57,6 @@ class Recreation(commands.Cog, name = 'Recreação'):
                 e.add_field(name = ':grey_exclamation: Resposta', value = f'{choice(responses)}')
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
 
                 # Console return
                 print('\n', f'-'*30)
@@ -85,7 +83,6 @@ class Recreation(commands.Cog, name = 'Recreação'):
                 e.add_field(name = ':grey_exclamation: Resultado', value = f'```Cara!```')
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-            await ctx.message.delete()
 
             #Console return
             print('\n', f'-'*30)

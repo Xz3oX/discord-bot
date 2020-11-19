@@ -8,8 +8,8 @@ from whois import whois
 
 wikipedia.set_lang("pt") # Set output lang of wikipedia summary
 
-cmdChannel = '🤖┃comandos' # Put here name of channel of only commands
-cmdChannelM = '<#764261852988964864>' # Put here ID of channel of only commands
+cmdChannel = '' # Put here name of channel of only commands
+cmdChannelM = '<#ID>' # Put here ID of channel of only commands
 
 class Information(commands.Cog, name = 'Informação'):
 
@@ -18,9 +18,8 @@ class Information(commands.Cog, name = 'Informação'):
 
     @commands.command(aliases = ['pong', 'latency', 'latencia', 'latência'])
     async def ping(self, ctx): # When a user says ping
-        if ctx.channel.name == cmdChannel
+        if ctx.channel.name == cmdChannel:
             # Discord return
-            await ctx.message.delete()
             e = discord.Embed(title = ':satellite: Latência', description = f'Minha latência atual é {round(self.client.latency * 1000)}ms, {ctx.author.mention}!', colour = 0x3AFE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             await ctx.send(embed = e)
@@ -46,7 +45,6 @@ class Information(commands.Cog, name = 'Informação'):
             message = await ctx.send(embed = e)
             
             try:
-                await ctx.message.delete()
 
                 e = discord.Embed(title = f':mag: Informações de ```{member.name}```', colour = 0x3AFE00, timestamp = datetime.utcnow())
                 e.add_field(name = ':bust_in_silhouette: Usuário', value = f'```{member.name}```')
@@ -77,7 +75,6 @@ class Information(commands.Cog, name = 'Informação'):
     async def serverinfo(self, ctx): # Server info command
         if ctx.channel.name == cmdChannel:
             # Discord return
-            await ctx.message.delete()
             e = discord.Embed(description = f'Processando... {ctx.author.mention}', colour = 0xF2FE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             message = await ctx.send(embed = e)
@@ -127,7 +124,6 @@ class Information(commands.Cog, name = 'Informação'):
                     e.add_field(name = ':white_check_mark: Resultado', value = f'```{wikipedia.summary(query, sentences = 3)}```')
                     e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                     await message.edit(embed = e)
-                    await ctx.message.delete()
 
                 except Exception:
                     e = discord.Embed(description = f'Não foi possível pesquisar "{query}", {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -163,7 +159,6 @@ class Information(commands.Cog, name = 'Informação'):
                     e.add_field(name = ':white_check_mark: Resultado', value = f'```{gethostbyname(dns)}```')
                     e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                     await message.edit(embed = e)
-                    await ctx.message.delete()
 
                 except Exception:
                     e = discord.Embed(description = f'Não foi possível resolver "{dns}", {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -210,7 +205,6 @@ class Information(commands.Cog, name = 'Informação'):
                     e.add_field(name = ':inbox_tray: Provedor', value = f'```{data["isp"]}```')
                     e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                     await message.edit(embed = e)
-                    await ctx.message.delete()
 
                 except Exception:
                     e = discord.Embed(description = f'Não foi possível rastrear "{target}", {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -344,7 +338,6 @@ class Information(commands.Cog, name = 'Informação'):
                     e.add_field(name = ':globe_with_meridians: Servidores', value = f'```{name_servers}```')
                     e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                     await message.edit(embed = e)
-                    await ctx.message.delete()
                 
                 except Exception as e:
                     e = discord.Embed(description = f'Não foi possível pesquisar "{domain}", {ctx.author.mention}', colour = 0xFE0000, timestamp = datetime.utcnow())

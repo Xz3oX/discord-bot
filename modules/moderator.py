@@ -2,9 +2,8 @@ import discord
 from discord.ext import commands
 from datetime import datetime
 
-mutedRole = '🔇┃Mutado' # Put here the name of muted members role
-memberRole = '👤┃Membro' # Put here the name of members default role
-punished = 764688902304169994 # Punishment chat ID
+mutedRole = '' # Put here the name of muted members role
+memberRole = '' # Put here the name of members default role
 
 class Moderator(commands.Cog, name = 'Moderação'):
     
@@ -32,10 +31,8 @@ class Moderator(commands.Cog, name = 'Moderação'):
                 e.set_author(name = 'BANIDO', icon_url = member.avatar_url)
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
                 
                 memberName = member
-        
         # Console return
         print('\n', f'-'*30)
         print(f'\n[+] A ban command has been called!\n\nLog: Author: {ctx.author}, Target: {memberName}')
@@ -67,7 +64,6 @@ class Moderator(commands.Cog, name = 'Moderação'):
                         e.add_field(name = ':crown: Moderador', value = f'{ctx.author.mention}')
                         e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                         await ctx.send(embed = e)
-                        await ctx.message.delete()
             
             except Exception:
                 await ctx.message.add_reaction('❌')
@@ -100,10 +96,8 @@ class Moderator(commands.Cog, name = 'Moderação'):
                 e.set_author(name = 'KICKADO', icon_url = member.avatar_url)
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
                 
                 memberName = member
-
         # Console return
         print('\n', f'-'*30)
         print(f'\n[+] A kick command has been called!\n\nLog: Author: {ctx.author}, Target: {memberName}')
@@ -138,7 +132,6 @@ class Moderator(commands.Cog, name = 'Moderação'):
                 e.set_author(name = 'MUTADO', icon_url = member.avatar_url)
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
 
                 # Console return
                 print('\n', f'-'*30)
@@ -173,7 +166,6 @@ class Moderator(commands.Cog, name = 'Moderação'):
                 e.set_author(name = 'DESMUTADO', icon_url = member.avatar_url)
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
 
                 # Console return
                 print('\n', f'-'*30)
@@ -189,13 +181,11 @@ class Moderator(commands.Cog, name = 'Moderação'):
             e = discord.Embed(description = f'{ctx.author.mention} deletou {amount} mensagem.', colour = 0x3AFE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             await ctx.send(embed = e)
-            await ctx.message.delete()
         else:
             await ctx.channel.purge(limit = amount)
             e = discord.Embed(description = f'{ctx.author.mention} deletou {amount} mensagens.', colour = 0x3AFE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             await ctx.send(embed = e)
-            await ctx.message.delete()
 
         # Console return
         print('\n', f'-'*30)

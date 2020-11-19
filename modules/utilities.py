@@ -6,8 +6,8 @@ from random import randint
 from datetime import datetime
 from json import load, dump
 
-cmdChannel = '🤖┃comandos' # Put here name of channel of only commands
-cmdChannelM = '<#764261852988964864>' # Put here ID of channel of only commands
+cmdChannel = '' # Put here name of channel of only commands
+cmdChannelM = '<#ID>' # Put here ID of channel of only commands
 
 class Utilities(commands.Cog, name = 'Utilidades'):
     
@@ -24,7 +24,6 @@ class Utilities(commands.Cog, name = 'Utilidades'):
             e = discord.Embed(description = f'Módulo `{extension}` carregado com sucesso, {ctx.author.mention}!', colour = 0x3AFE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             await ctx.send(embed = e)
-            await ctx.message.delete()
         
         except errors.ExtensionNotFound:
             e = discord.Embed(description = f'Módulo `{extension}` não existe, {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -53,7 +52,6 @@ class Utilities(commands.Cog, name = 'Utilidades'):
                 e = discord.Embed(description = f'Módulo `{extension}` descarregado com sucesso, {ctx.author.mention}!', colour = 0x3AFE00, timestamp = datetime.utcnow())
                 e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
                 await ctx.send(embed = e)
-                await ctx.message.delete()
 
             except errors.ExtensionNotLoaded:
                 e = discord.Embed(description = f'Módulo `{extension}` já foi descarregado ou não existe, {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -84,7 +82,6 @@ class Utilities(commands.Cog, name = 'Utilidades'):
         e = discord.Embed(description = f'Módulos: `{extensions}`.', colour = 0x3AFE00, timestamp = datetime.utcnow())
         e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
         await ctx.send(embed = e)
-        await ctx.message.delete()
 
         # Console return
         print('\n', f'-'*30)
@@ -100,7 +97,6 @@ class Utilities(commands.Cog, name = 'Utilidades'):
             e = discord.Embed(description = f'Módulo `{extension}` recarregado com sucesso, {ctx.author.mention}!', colour = 0x3AFE00, timestamp = datetime.utcnow())
             e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
             await ctx.send(embed = e)
-            await ctx.message.delete()
 
         except Exception:
             e = discord.Embed(description = f'Não foi possível recarregar`{extension}`, {ctx.author.mention}!', colour = 0xFE0000, timestamp = datetime.utcnow())
@@ -131,7 +127,6 @@ class Utilities(commands.Cog, name = 'Utilidades'):
         e = discord.Embed(description = f'Todos os módulos foram recarregados com sucesso, {ctx.author.mention}!', colour = 0x3AFE00, timestamp = datetime.utcnow())
         e.set_footer(icon_url = ctx.author.avatar_url, text = ctx.author.name)
         await ctx.send(embed = e)
-        await ctx.message.delete()
         
         # Console return 
         print('\n', f'-'*30)

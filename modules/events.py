@@ -4,9 +4,11 @@ from discord.ext import commands
 from datetime import datetime
 from json import load, dump
 
-welcomeChannel = 763772865341423667 # Welcome channel ID (without ', only ID, need to be a integer)
-autoRole = '👤┃Membro' # ID of autorole when a member join the server
+welcomeChannel = '' # Welcome channel ID (without ', only ID, need to be a integer)
+autoRole = '' # Name of role to autorole when a member join the server
 helpCommand = 'ajuda' # Put here the name or alias of default help command
+eventsChannel = '' # Put here ID of events channel, need to be a integer
+botID = '' # Put here bot ID, need to be a integer
 
 class Events(commands.Cog, name = 'Eventos'):
 
@@ -26,6 +28,39 @@ class Events(commands.Cog, name = 'Eventos'):
         # Autorole
         role = discord.utils.get(member.guild.roles, name = autoRole)
         await member.add_roles(role)
+
+    @commands.Cog.listener()
+    async def on_message_delete(self, ctx): # When a member delete a message
+        # Discord return
+        if ctx.author.id != botID:
+            e = discord.Embed(colour = 0xFE0000, timestamp = datetime.utcnow())
+            e.set_author(name = '📌 Mensagem deletada')
+            e.add_field(name = '📝 Mensagem', value = f'`{str(ctx.content)}`')
+            e.set_footer(icon_url = ctx.author.avatar_url, text = f'{ctx.author.name}#{ctx.author.discriminator}')
+            await self.client.get_channel(eventsChannel).send(embed = e)
+
+            # Console return
+            print('\n', f'-'*30)
+            print(f'\n[+] A message has deleted!\n\nLog: Author: {ctx.author}')
+        else:
+            pass
+
+    @commands.Cog.listener()
+    async def on_message_edit(self, ctx, after): # When a member edit a message
+        # Discord return
+        if ctx.author.id != botID:
+            e = discord.Embed(colour = 0xFE0000, timestamp = datetime.utcnow())
+            e.set_author(name = '📌 Mensagem modificada')
+            e.add_field(name = '⏪ Antes', value = f'`{str(ctx.content)}`')
+            e.add_field(name = '⏩ Depois', value = f'`{str(after.content)}`')
+            e.set_footer(icon_url = ctx.author.avatar_url, text = f'{ctx.author.name}#{ctx.author.discriminator}')
+            await self.client.get_channel(eventsChannel).send(embed = e)
+
+            # Console return
+            print('\n', f'-'*30)
+            print(f'\n[+] A message has modified!\n\nLog: Author: {ctx.author}')
+        else:
+            pass
 
 # Cog setup
 def setup(client):
