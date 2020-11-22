@@ -1,10 +1,8 @@
-<img src = "https://i.imgur.com/qyPqPmE.png" width = "800">
-
-[![CodeFactor](https://www.codefactor.io/repository/github/h4lkun1/discord-bot/badge)](https://www.codefactor.io/repository/github/h4lkun1/discord-bot)
-![LastCommit](https://img.shields.io/github/last-commit/h4lkun1/discord-bot)
-![Issues](https://img.shields.io/github/issues/h4lkun1/discord-bot)
-![PullRequests](https://img.shields.io/github/issues-pr/h4lkun1/discord-bot)
-![Followers](https://img.shields.io/github/followers/h4lkun1?label=Follow)
+[![CodeFactor](https://www.codefactor.io/repository/github/h4ikun1/discord-bot/badge)](https://www.codefactor.io/repository/github/h4ikun1/discord-bot)
+![LastCommit](https://img.shields.io/github/last-commit/h4ikun1/discord-bot)
+![Issues](https://img.shields.io/github/issues/h4ikun1/discord-bot)
+![PullRequests](https://img.shields.io/github/issues-pr/h4ikun1/discord-bot)
+![Followers](https://img.shields.io/github/followers/h4ikun1?label=Follow)
 
 <br>
 
@@ -24,7 +22,7 @@
 
   To download the files run:
   ```bash
-  git clone https://github.com/h4lkun1/discord-bot.git
+  git clone https://github.com/h4ikun1/discord-bot.git
   cd discord-bot
   ```
   Finally, to install the project dependencies, run:
