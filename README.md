@@ -1,8 +1,8 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/h4ikun1/discord-bot/badge)](https://www.codefactor.io/repository/github/h4ikun1/discord-bot)
-![LastCommit](https://img.shields.io/github/last-commit/h4ikun1/discord-bot)
-![Issues](https://img.shields.io/github/issues/h4ikun1/discord-bot)
-![PullRequests](https://img.shields.io/github/issues-pr/h4ikun1/discord-bot)
-![Followers](https://img.shields.io/github/followers/h4ikun1?label=Follow)
+[![CodeFactor](https://www.codefactor.io/repository/github/h3llr1s1ng/discord-bot/badge)](https://www.codefactor.io/repository/github/h3llr1s1ng/discord-bot)
+![LastCommit](https://img.shields.io/github/last-commit/h3llr1s1ng/discord-bot)
+![Issues](https://img.shields.io/github/issues/h3llr1s1ng/discord-bot)
+![PullRequests](https://img.shields.io/github/issues-pr/h3llr1s1ng/discord-bot)
+![Followers](https://img.shields.io/github/followers/h3llr1s1ng?label=Follow)
 
 <br>
 
@@ -22,7 +22,7 @@
 
   To download the files run:
   ```bash
-  git clone https://github.com/h4ikun1/discord-bot.git
+  git clone https://github.com/h3llr1s1ng/discord-bot.git
   cd discord-bot
   ```
   Finally, to install the project dependencies, run:
