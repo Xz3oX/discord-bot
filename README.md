@@ -17,7 +17,7 @@
 
   To download the files run:
   ```bash
-  git clone https://github.com/z3o/discord-bot.git
+  git clone https://github.com/z3ox1s/discord-bot.git
   cd discord-bot
   ```
   Finally, to install the project dependencies, run:
